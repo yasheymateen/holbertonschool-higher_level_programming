@@ -1,0 +1,1 @@
+This repository contains the assignments and projects within Python Programming
