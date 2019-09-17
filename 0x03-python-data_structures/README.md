@@ -1,0 +1,1 @@
+This project folder contains the assignments for python data structures
