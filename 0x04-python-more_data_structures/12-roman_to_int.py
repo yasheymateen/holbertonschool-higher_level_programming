@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
         return 0
     if roman_string is None:
         return 0
-    for num in range (num, len(numer)):
+    for num in range(num, len(numer)):
         if num < len(numer) - 1 and dict[numer[num]] < dict[numer[num + 1]]:
             value -= dict[numer[num]]
         else:
