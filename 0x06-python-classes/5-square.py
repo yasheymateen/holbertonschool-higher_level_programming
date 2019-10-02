@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 """class Square"""
+
+
 class Square:
     """square class"""
+
     def __init__(self, size=0):
         """initialize with size attribute"""
         self.size = size
+
     @property
     def size(self):
         """gets size"""

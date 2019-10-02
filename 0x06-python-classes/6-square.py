@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """class square"""
 
+
 class Square:
     """square class"""
+
     def __init__(self, size=0, position=(0, 0)):
         """initialize with attributes"""
         self.size = size
@@ -27,6 +29,7 @@ class Square:
     def position(self):
         """gets position"""
         return self.__position
+
     @position.setter
     def position(self, value):
         """sets position w/error handling"""
