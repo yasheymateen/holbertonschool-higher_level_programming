@@ -7,8 +7,8 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """initialize with attributes"""
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -51,7 +51,7 @@ class Square:
 
     def my_print(self):
         """prints square"""
-        if self.size == 0:
+        if self.__size == 0:
             print("")
         else:
             for num in range(self.__position[1]):
