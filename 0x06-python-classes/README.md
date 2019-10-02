@@ -1,0 +1,1 @@
+This folder contains assignments for python classes and how to use them
