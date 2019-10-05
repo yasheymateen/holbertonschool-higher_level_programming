@@ -1,0 +1,22 @@
+``add_integer`` module
+======================
+
+Using ``add_integer``
+---------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(100, 200)
+300
+
+>>> add_integer(200.4, 200.1)
+400
+
+>>> add_integer(-20, 90)
+70
+
+>>> add_integer(11, 18)
+29
+
+>>> add_integer(2)
+100
