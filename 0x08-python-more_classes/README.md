@@ -1,0 +1,1 @@
+this project folder contains assignments about python classes and more
