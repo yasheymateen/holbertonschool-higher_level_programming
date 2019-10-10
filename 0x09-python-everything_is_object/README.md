@@ -1,0 +1,1 @@
+This project folder contains the assignments for how python works with diff types of objects
