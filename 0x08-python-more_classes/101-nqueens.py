@@ -50,7 +50,7 @@ class nQueens:
         count_b = 0
         for i in c_board[row]:
             if i == 1:
-                count_a +=1
+                count_a += 1
             if count_a == 2:
                 return False
         for r in c_board:
@@ -58,7 +58,7 @@ class nQueens:
             for item in r:
                 if count == column:
                     if item == 1:
-                        count_b +=1
+                        count_b += 1
                     if count_b == 2:
                         return False
                 count += 1
