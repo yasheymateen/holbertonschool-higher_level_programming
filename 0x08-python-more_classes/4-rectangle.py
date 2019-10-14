@@ -42,22 +42,23 @@ class Rectangle:
 
     def area(self):
         """ method to find the area of a rectangle """
-        return self.__height * self.__width
+        return (self.__height) * (self.__width)
 
     def perimeter(self):
         """ method to find the perimeter of a rectangle """
-        if self.__height == 0 or self.__width == 0:
+        if self.__width and self.__height == 0:
             return 0
-        return (self.__height * 2) + (self.__width * 2)
+        return (self.__height + self.__width) * 2
 
     def __str__(self):
         """ string representation of square """
-        string = ""
-        if self.__height == 0 or self.__width == 0:
-            return string
-        for y in range(self.__height):
-            for x in range(self.__width):
-                string += "#"
-            string += "\n"
-        string = string[:-1]
-        return string
+        string = []
+        for i in range(self.__height):
+            for i in range(self.__width):
+                string.append('#')
+            string.append('\n')
+        x = ''.join(string)
+        return x[:-1]
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(str(self.width), str(self.height))
