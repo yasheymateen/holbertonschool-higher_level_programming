@@ -1,0 +1,1 @@
+This project contains the assignments for inheritance in python and subclasses
