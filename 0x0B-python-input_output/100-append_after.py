@@ -2,7 +2,7 @@
 """ function that inserts a line of text to a file after each specific line """
 
 
-def append_after(filename="", search_string="",new_string=""):
+def append_after(filename="", search_string="", new_string=""):
     """ appends new string """
     with open(filename, mode='r', encoding='utf-8') as f:
         string = ""
