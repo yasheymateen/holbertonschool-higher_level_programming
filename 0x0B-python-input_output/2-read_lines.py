@@ -5,7 +5,7 @@
 def read_lines(filename="", nb_lines=0):
     """ read lines funct """
     l_count = 0
-    with open(filename, encoding = 'utf-8') as f:
+    with open(filename, encoding ='utf-8') as f:
         if nb_lines <= 0:
             print(f.read(), end='')
         for line in f:
