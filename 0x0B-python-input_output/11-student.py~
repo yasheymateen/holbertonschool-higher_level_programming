@@ -1,0 +1,5 @@
+#/usr/bin/python3
+""" class Student that deinfates a student """
+
+
+def to_json(self
