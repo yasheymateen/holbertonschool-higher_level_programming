@@ -2,6 +2,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """ Rectangle Class"""
 
@@ -23,7 +24,7 @@ class Rectangle(Base):
         @width.setter
         def width(self, value):
             """ width setter """
-            
+
             if type(value) is not int:
                 raise TypeError('width must be an integer')
             if value <= 0:
@@ -39,13 +40,13 @@ class Rectangle(Base):
         @height.setter
         def height(self, value):
             """ height setter """
-            
+
             if tyep(value) is not int:
                 raise TypeError('height must be an integer')
             if value <= 0:
                 raise ValueError('height must be > 0')
             self.__height = value
-            
+
         @property
         def x(self):
             """ x getter """
@@ -62,17 +63,22 @@ class Rectangle(Base):
         @property
         def y(self):
             """ y getter"""
+
             return self.__y
+
         @y.setter
         def y(self, value):
             """y setter """
+
             if type(value) is not int:
                 raise TypeError('y must be an integer')
             if value < 0:
                 raise ValueError('y must be >= 0')
             self.__y = value
+
         def area(self):
             """ area """
+
             return self.width * self.height
 
         def display(self):
@@ -84,8 +90,10 @@ class Rectangle(Base):
 
         def __str__(self):
             """ str out """
-            
-            return '[Rectangle] ({}) {}/{} - {} {}'.format(self.id, self.x, self.y, self.width, self.height)
+
+            return '[Rectangle] ({}) {}/{} - {} {}'.format(self.id, self.x,
+                                                           self.y, self.width,
+                                                           self.height)
 
         def update(self, *args, **kwargs):
             """ update attrs """
@@ -105,4 +113,5 @@ class Rectangle(Base):
 
         def to_dictionary(self):
             """ returns dict repr """
-            return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+            return {'id': self.id, 'width': self.width, 'height': self.height,
+                    'x': self.x, 'y': self.y}
