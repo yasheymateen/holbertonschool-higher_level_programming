@@ -25,13 +25,13 @@ class Base:
         if list_dictionaries is None or not len(list_dictionaries):
             return "[]"
         return json.dumps(list_dictionaries)
-    
 
     @classmethod
     def save_to_file(cls, list_objs):
         """ writes json string repr to file"""
-        
-        with open(cls.__name__ + '.json', "w", encoding='utf-8'list_objs is None:
+
+        with open(cls.__name__ + '.json', "w", encoding='utf-8') as f:
+            if list_objs is None:
                 f.write("[]")
             else:
                 f.write(cls.to_json_string([o.to_dictionary() for in list_objs]))
@@ -57,7 +57,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ returns list of instances read from file"""
-        
+
         obj_list = []
         try:
             with open(cls.__name__ + ".json", "r", encoding='utf-8') as f:
