@@ -57,7 +57,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ returns list of instances read from file"""
+        """returns list of instances read from file"""
 
         obj_list = []
         try:
