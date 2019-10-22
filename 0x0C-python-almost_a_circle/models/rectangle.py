@@ -11,114 +11,131 @@ class Rectangle(Base):
         """ initialization """
 
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        """     if type(width) is not int:
+        raise TypeError("width must be an integer")
+        if width <= 0:
+        raise ValueError("width must be > 0")
+        if type(height) is not int:
+        raise TypeError("height must be an integer")
+        if height <= 0:
+        raise ValueError("height must be > 0")
+        if type(x) is not int:
+        raise TypeError("x must be an integer")
+        if x < 0:
+        raise ValueError("x must be >= 0")
+        if type(y) is not int:
+        raise TypeError("y must be an integer")
+        if y < 0:
+        raise ValueError("y must be >= 0")
+        """
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
-        @property
-        def width(self):
-            """ width getter """
+    @property
+    def width(self):
+        """ width getter """
 
-            return self.__width
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            """ width setter """
+    @width.setter
+    def width(self, value):
+        """ width setter """
 
-            if type(value) is not int:
-                raise TypeError("width must be an integer")
-            if value <= 0:
-                raise ValueError("width must be > 0")
-            self.__width = value
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
-        @property
-        def height(self):
-            """ height getter """
+    @property
+    def height(self):
+        """ height getter """
 
-            return self.__height
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            """ height setter """
+    @height.setter
+    def height(self, value):
+        """ height setter """
 
-            if type(value) is not int:
-                raise TypeError("height must be an integer")
-            if value <= 0:
-                raise ValueError("height must be > 0")
-            self.__height = value
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
-        @property
-        def x(self):
-            """ x getter """
-            return self.__x
+    @property
+    def x(self):
+        """ x getter """
+        return self.__x
 
-        @x.setter
-        def x(self, value):
-            """ set width """
+    @x.setter
+    def x(self, value):
+        """ set width """
 
-            if type(value) is not int:
-                raise TypeError("x must be an integer")
-            if value < 0:
-                raise ValueError("x must be >= 0")
-            self.__x = value
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
-        @property
-        def y(self):
-            """ y getter"""
+    @property
+    def y(self):
+        """ y getter"""
 
-            return self.__y
+        return self.__y
 
-        @y.setter
-        def y(self, value):
-            """y setter """
+    @y.setter
+    def y(self, value):
+        """y setter """
 
-            if type(value) is not int:
-                raise TypeError("y must be an integer")
-            if value < 0:
-                raise ValueError("y must be >= 0")
-            self.__y = value
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
 
-        def area(self):
-            """ area """
+    def area(self):
+        """ area """
 
-            return self.width * self.height
+        return self.width * self.height
 
-        def display(self):
-            """ shape"""
-            for row in range(self.y):
-                print()
-            for col in range(self.height):
-                for i in range(self.x):
-                    print(" ", end="")
-                for j in range(self.width):
-                    print("#", end="")
-                print()
+    def display(self):
+        """ shape"""
+        for row in range(self.y):
+            print()
+        for col in range(self.height):
+            for i in range(self.x):
+                print(" ", end="")
+            for j in range(self.width):
+                print("#", end="")
+            print()
 
-        def __str__(self):
-            """ str out """
+    def __str__(self):
+        """ str out """
 
-            return '[Rectangle] ({}) {}/{} - {} {}'.format(self.id, self.x,
-                                                           self.y, self.width,
-                                                           self.height)
+        return '[Rectangle] ({}) {}/{} - {} {}'.format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
 
-        def update(self, *args, **kwargs):
-            """ update attrs """
-            attrs = ['id', 'width', 'height', 'x', 'y']
-            if args and 0 < len(args) <= 5:
-                for i, arg in enumerate(args):
-                    if i == 0:
-                        super().__init__(arg)
-                    else:
-                        self.__setattr__(attrs[i], arg)
-            elif kwargs and 0 < len(kwargs) <= 5:
-                for k, v in kwargs.items():
-                    if k == 'id':
-                        super().__init__(v)
-                    elif k in attrs:
-                        self.__setattr__(k, v)
+    def update(self, *args, **kwargs):
+        """ update attrs """
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        if args and 0 < len(args) <= 5:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    super().__init__(arg)
+                else:
+                    self.__setattr__(attrs[i], arg)
+        elif kwargs and 0 < len(kwargs) <= 5:
+            for k, v in kwargs.items():
+                if k == 'id':
+                    super().__init__(v)
+                elif k in attrs:
+                    self.__setattr__(k, v)
 
-        def to_dictionary(self):
-            """ returns dict repr """
-            return {'id': self.id, 'width': self.width, 'height': self.height,
-                    'x': self.x, 'y': self.y}
+    def to_dictionary(self):
+        """ returns dict repr """
+        return {'id': self.id, 'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}
