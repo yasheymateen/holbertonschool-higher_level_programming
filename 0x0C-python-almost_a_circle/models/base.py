@@ -34,7 +34,8 @@ class Base:
             if list_objs is None:
                 f.write("[]")
             else:
-                f.write(cls.to_json_string([o.to_dictionary() for o in list_objs]))
+                f.write(cls.to_json_string([o.to_dictionary()
+                                            for o in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
@@ -67,4 +68,3 @@ class Base:
         except:
             pass
         return obj_list
-
