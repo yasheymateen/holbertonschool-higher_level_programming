@@ -2,6 +2,7 @@
 """ Base Model Module """
 
 import json
+from os import path
 import csv
 
 
@@ -59,12 +60,9 @@ class Base:
     def load_from_file(cls):
         """returns list of instances read from file"""
 
-        obj_list = []
-        try:
-            with open(cls.__name__ + ".json", "r", encoding='utf-8') as f:
-                text = f.read()
-            for d in cls.from_json_string(text):
-                obj_list.append(cls.create(*d))
-        except:
-            pass
-        return obj_list
+        filename = cls.__name__ + '.json'
+        if path.isfile(filename):
+            with open(filename, 'r') as f:
+                dictionary = cls.from_json_string(f.read())
+            return [cls.create(**obj) for obj in dictionary]
+        return []
