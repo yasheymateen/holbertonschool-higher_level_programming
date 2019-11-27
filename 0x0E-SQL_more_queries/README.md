@@ -1,0 +1,1 @@
+This project expands on SQL and delves into more queries
