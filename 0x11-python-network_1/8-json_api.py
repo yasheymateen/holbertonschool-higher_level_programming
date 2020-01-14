@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Takes in a letter and sends POST  request to http://0.0.0.0:5000/search_user 
+"""Takes in a letter and sends POST  request to http://0.0.0.0:5000/search_user
 with letter as a parameter
 """
 import requests
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     r = requests.post(url, data={'q': letter})
     try:
         instance = r.json()
-        if len(instance) == 0:
+        if not instance:
             print("No result")
         else:
             print("[{}] {}".format(instance.get('id'), instance.get('name')))
