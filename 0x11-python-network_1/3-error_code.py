@@ -1,15 +1,14 @@
-#!#!/usr/bin/python3
+#!/usr/bin/python3
 """Takes in a URL, sends request to  URL, displays the body of the response
 """
-import sys
-import urllib.request
-
 if __name__ == "__main__":
-    url = sys.argv[1]
+    import urllib.request as ur
+    import urllib.error as ure
+    from sys import argv
+    req = ur.Request(argv[1])
 
     try:
-        with urllib.request.urlopen(url) as request:
-            the_page = request.read()
-            print(the_page.decode())
-    except urllib.error.HTTPError as e:
-        print("Error code:", e.code)
+        with ur.urlopen(req) as response:
+            print(str(response.read(), 'utf-8'))
+    except ure.HTTPError as err:
+        print('Error code: {}'.format(err.getcode()))
