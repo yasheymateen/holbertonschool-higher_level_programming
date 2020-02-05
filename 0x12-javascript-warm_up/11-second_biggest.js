@@ -1,7 +1,29 @@
 #!/usr/bin/node
-const list = process.argv.slice(2);
-if (list.length === 0 || list.length === 1) {
-  console.log(0);
+if (!process.argv[3]) {
+  console.log('0');
 } else {
-  console.log(list.sort()[list.length - 2]);
+  let largest;
+  let secondLargest;
+
+  if (Number(process.argv[2]) > Number(process.argv[3])) {
+    largest = Number(process.argv[2]);
+    secondLargest = Number(process.argv[3]);
+  } else {
+    largest = Number(process.argv[3]);
+    secondLargest = Number(process.argv[2]);
+  }
+
+  let i = 4;
+  while (process.argv[i]) {
+    const num = Number(process.argv[i]);
+    if (num > largest) {
+      secondLargest = largest;
+      largest = num;
+    } else if (largest > num && num > secondLargest) {
+      secondLargest = num;
+    }
+    i++;
+  }
+
+  console.log(secondLargest);
 }
